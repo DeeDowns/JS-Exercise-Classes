@@ -166,8 +166,8 @@ class Instructor extends Lambdasian {
   demo(subject){
     return `Today we are learning about ${subject}`;
   }
-  grade(student, subject){
-    return `${student} receives a perfect score on ${subject}`
+  grade(Student, subject){
+    return `${Student.name} receives a perfect score on ${subject}`
   }
 }
 
@@ -181,7 +181,7 @@ const instructorOne = new Instructor({
 })
 console.log(instructorOne);
 console.log(instructorOne.demo('CSS'))
-console.log(instructorOne.grade('Dee', 'CSS'))
+// console.log(instructorOne.grade(studentOne, 'CSS'))
 
 
 /*
@@ -230,6 +230,7 @@ console.log(studentOne.listSubjects())
 console.log(studentOne.PRAssignment('Classes'))
 console.log(studentOne.sprintChallenge('Classes'))
 
+console.log(instructorOne.grade(studentOne, 'CSS'))
 
 
 /*
@@ -245,9 +246,35 @@ console.log(studentOne.sprintChallenge('Classes'))
         + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
-class ProjectManager {
-
+class ProjectManager extends Instructor{
+  constructor(attributes){
+    super(attributes)
+    this.gradClassName = attributes.gradClassName;
+    this.favInstructor = attributes.favInstructor;
+  }
+  standUp(channel) {
+    return `${this.name} announces to ${channel}, @channel standy times!`
+  }
+  debugsCode(Student, subject){
+    return `${this.name} debugs ${Student.name}'s code on ${subject}`
+  }
 }
+
+const newPM = new ProjectManager({
+  name: 'Toni',
+  age: 54,
+  location: 'Ocala, FL',
+  specialty: 'Array Methods',
+  favLanguage: 'Python',
+  catchPhrase: 'You are a monster',
+  gradClassName: 'CS1',
+  favInstructor: 'Tony'
+})
+
+console.log(newPM)
+console.log(newPM.standUp('Web33'));
+console.log(newPM.debugsCode(studentOne, 'Classes'))
+console.log(newPM.grade(studentOne, 'CSS'))
 
 /*
   STRETCH PROBLEM (no tests!)
