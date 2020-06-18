@@ -207,15 +207,29 @@ class Student extends Lambdasian {
     this.favSubjects = ['HTML', 'CSS', 'JS'];
   }
   listSubjects() {
-    return `Loving ${this.favSubjects.toString()}`
+    return `Loving ${this.favSubjects.toString()}!`
   }
-  PRAssignemnt(subject){
+  PRAssignment(subject){
     return `${this.name} has submitted a PR for ${subject}`
   }
   sprintChallenge(subject) {
     return `${this.name} has begun sprint challenge on ${subject}`
   }
 }
+
+const studentOne = new Student({
+  name: 'Dee',
+  age: 26,
+  location: 'Ocala FL',
+  previousBackground: 'Flight Attendant',
+  className: 'Web33',
+  // favSubjects: []
+})
+console.log(studentOne)
+console.log(studentOne.listSubjects())
+console.log(studentOne.PRAssignment('Classes'))
+console.log(studentOne.sprintChallenge('Classes'))
+
 
 
 /*
