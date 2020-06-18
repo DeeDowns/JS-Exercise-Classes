@@ -204,7 +204,7 @@ class Student extends Lambdasian {
     super(attributes)
     this.previousBackground = attributes.previousBackground;
     this.className = attributes.className;
-    this.favSubjects = ['HTML', 'CSS', 'JS'];
+    this.favSubjects = attributes.favSubjects;
   }
   listSubjects() {
     return `Loving ${this.favSubjects.toString()}!`
@@ -223,7 +223,7 @@ const studentOne = new Student({
   location: 'Ocala FL',
   previousBackground: 'Flight Attendant',
   className: 'Web33',
-  // favSubjects: []
+  favSubjects: ['HTML', 'CSS', 'JS']
 })
 console.log(studentOne)
 console.log(studentOne.listSubjects())
