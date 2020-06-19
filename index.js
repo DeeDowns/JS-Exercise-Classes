@@ -39,7 +39,6 @@ class Airplane {
     - Give instances of Person a method `.toString()`:
         + It should return a string with `name` and `age`. Example: "Mary, 50"
 */
-
 class Person {
   constructor(name, age){
     this.name = name;
@@ -80,7 +79,6 @@ console.log(me.stomach);
     - A car which runs out of `fuel` while driving can't drive any more distance:
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
-
 class Car {
   constructor(model, milesPerGallon){
     this.model = model;
@@ -104,11 +102,11 @@ class Car {
   }
 }
 
-
 const myCar = new Car('Fusion', 31);
 console.log(myCar);
 myCar.fill(10);
 console.log(myCar.tank)
+
 
 /*
   TASK 3
@@ -181,7 +179,6 @@ const instructorOne = new Instructor({
 })
 console.log(instructorOne);
 console.log(instructorOne.demo('CSS'))
-// console.log(instructorOne.grade(studentOne, 'CSS'))
 
 
 /*
@@ -214,7 +211,7 @@ class Student extends Lambdasian {
   }
   sprintChallenge(subject) {
     return `${this.name} has begun sprint challenge on ${subject}`
-  }
+  }  
 }
 
 const studentOne = new Student({
@@ -225,12 +222,14 @@ const studentOne = new Student({
   className: 'Web33',
   favSubjects: ['HTML', 'CSS', 'JS']
 })
+
 console.log(studentOne)
 console.log(studentOne.listSubjects())
 console.log(studentOne.PRAssignment('Classes'))
 console.log(studentOne.sprintChallenge('Classes'))
 
 console.log(instructorOne.grade(studentOne, 'CSS'))
+
 
 
 /*
@@ -266,7 +265,7 @@ const newPM = new ProjectManager({
   location: 'Ocala, FL',
   specialty: 'Array Methods',
   favLanguage: 'Python',
-  catchPhrase: 'You are a monster',
+  catchPhrase: 'You are a beast',
   gradClassName: 'CS1',
   favInstructor: 'Tony'
 })
